@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+  --card_width: 250px;
+  --row_increment: 10px;
+  --card_border_radius: 16px;
+  --card_small: 26;
+  --card_med: 33;
+  --card_large: 45;
+}
+.pin_container {
+  margin: 0;
+  padding: 0;
+  width: 95vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card_width));
+  grid-auto-rows: var(--row_increment);
+  justify-content: center;
+  background-color: transparent;
+}
+.card {
+  padding: 0;
+  margin: 15px 10px;
+  border-radius: var(--card_border_radius);
+  
+}
+.card_small {
+  grid-row-end: span var(--card_small);
+}
+.card_medium {
+  grid-row-end: span var(--card_med);
+}
+.card_large {
+  grid-row-end: span var(--card_large);
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.top{
+  background-color: rgb(20, 115, 118);
+  background-size: cover;
+  vertical-align: top;
+  height: 50px;
+  margin-top: 0px; 
+  padding-left: 97%;
+  padding-top: 5px;
+}
+body{
+  background-image:url('images/background2.png');
+  background-size: cover;
+  background-repeat: repeat-y;   
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5); 
+  background-blend-mode: darken;
+
+}
+
+.search{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 28px;
+  background-color: #c3c3c3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.search_input{
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: #c3c3c3;
+  font-size: 16px;  
+  font-family: comic sans ms;
+  color: #333333;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu {
+  position: relative;
+  display: inline-block;  
+}
+  
+.drop_down {
+  text-decoration: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  background: rgb(131, 193, 195);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  min-width: 150px;
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  border-radius: 6px;
+}
+  
+.menu:hover .drop_down {
+  opacity: 1;
+  visibility: visible;
+}
+  
+.drop_down li {
+  padding: 10px 20px;
+border-bottom: 2px solid #ccc; 
+cursor: pointer;
+margin-right: 10px;
+margin-left: 10px; 
+}
+.drop_down li:last-child {
+  border-bottom: none;
+}
+.drop_down a {
+  color: #272626;
+  text-decoration: none;
+  text-align: center;
+  font-family: comic sans ms;
+  white-space: nowrap;
+}
+.drop_down li:hover {
+  background-color:rgb(111, 172, 174);
+  
+}
+.button{
+  background: none;
+  border: none;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--card_border_radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card_content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--card_border_radius);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.7);
+}
+
+.card_buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card_buttons {
+  opacity: 1;
+}
+
+.card_buttons button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card_buttons button:hover {
+  background-color: #ffdddd;
+  transform: scale(1.2);
+}
+.card_buttons button:active {
+  background-color: #ffdddd;
+  transform: scale(0.9);
+}
+.card_add{
+  height: 100%;
+  width: 100%;
+  background-color: #d7d7d7;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.add{
+  background-color: #d7d7d7;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: auto auto auto auto;
+  height: 100%;
+  width: 100%;  
+  font-size: 50px;
+  font-family: comic sans ms;
+}
+.card_add:hover{
+  background-color: #ffdddd;
+  transform: scale(1.2);
+}
